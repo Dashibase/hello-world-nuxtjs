@@ -5,7 +5,7 @@
     <p>After you enter your plugin URL, you will receive the following setup data from Dashibase to use in your plugin:</p>
     <ul>
       <li>columnIds: 
-        <span v-if="message">{{message.columnIds?.join(', ')}}</span>
+        <span v-if="message">{{message.columnIds.join(', ')}}</span>
         <span v-else>Loading</span>
       </li>
       <li>id: 
@@ -31,12 +31,17 @@
 
 const message = ref(null)
 const { $client } = useNuxtApp()
+
 onMounted(() => {
   const client = $client()
+
   client.onSetup((payload: any) => {
-    console.log(payload)
-    message.value = JSON.stringify(payload, null, 2)
+    // Prints a log when a SETUP message is received
+    console.log(`Received SETUP message ${JSON.stringify(payload)}`)
+    message.value = payload
   })
+  
+  // Inform Dashibase that plugin is ready to be setup
   client.init()
 })
 </script>
