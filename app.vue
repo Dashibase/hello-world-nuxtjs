@@ -5,19 +5,19 @@
     <p>After you enter your plugin URL, you will receive the following setup data from Dashibase to use in your plugin:</p>
     <ul>
       <li>columnIds: 
-        <span v-if="message">{{message.columnIds.join(', ')}}</span>
+        <span v-if="setupData">{{setupData.columnIds.join(', ')}}</span>
         <span v-else>Loading</span>
       </li>
       <li>id: 
-        <span v-if="message">{{message.id}}</span>
+        <span v-if="setupData">{{setupData.id}}</span>
         <span v-else>Loading</span>
       </li>
       <li>messageType: 
-        <span v-if="message">{{message.messageType}}</span>
+        <span v-if="setupData">{{setupData.messageType}}</span>
         <span v-else>Loading</span>
       </li>
       <li>store: 
-        <span v-if="message">{{message.store}}</span>
+        <span v-if="setupData">{{setupData.store}}</span>
         <span v-else>Loading</span>
       </li>
     </ul>
@@ -29,16 +29,16 @@
 
 <script setup lang="ts">
 
-const message = ref(null)
+const setupData = ref(null)
 const { $client } = useNuxtApp()
 
 onMounted(() => {
   const client = $client()
 
-  client.onSetup((payload: any) => {
+  client.onSetup((data: any) => {
     // Prints a log when a SETUP message is received
-    console.log(`Received SETUP message ${JSON.stringify(payload)}`)
-    message.value = payload
+    console.log(`Received SETUP message ${JSON.stringify(data)}`)
+    setupData.value = data
   })
   
   // Inform Dashibase that plugin is ready to be setup
