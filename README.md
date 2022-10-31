@@ -1,34 +1,46 @@
-# Nuxt.js Example
+# Hello World plugin using Nuxt.js
 
-Deploy your [Nuxt.js](https://nuxtjs.org) project to Vercel with zero configuration.
+![Hello World plugin block](/assets/hello-world-plugin-block.png)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/nuxtjs&template=nuxtjs)
+[Dashibase](https://dashibase.com/) lets you build internal admin dashboards using a Notion-like UI. 
 
-_Live Example: https://nuxtjs-template.vercel.app_
+You can extend the functionality of your dashboards by developing a plugin. For example, you could display each customer's Stripe information, show support tickets from Zendesk, send emails via SendGrid, and more.
 
-## Setup
+This is a simple Hello World example plugin to show you:
 
-Install the dependencies:
+- What data you can receive from Dashibase to use in your plugin
+- How to create a simple plugin with Nuxt.js
 
-```bash
-yarn install
-```
+## Getting Started
 
-## Development
+### 1. Set up a dashboard in Dashibase
 
-Start the development server on http://localhost:3000:
+You can skip this step if you already have a dashboard in Dashibase. 
 
-```bash
-yarn dev
-```
+If not, you can sign up for free [here](https://dashibase.com/). After you have created a dashboard and added a table from your database, click into any of the items on your table. Here is where we will add the plugin.
 
-## Deploy Your Own
+### 2. Clone and deploy this repo
 
-Build the application for production:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDashibase%2Fhello-world-nuxtjs)
 
-```bash
-yarn build
-```
+Click on the button above to clone and deploy the plugin through Vercel.
 
+Your Hello World plugin is now ready.
 
+### 3. Add plugin to your dashboard
+
+Go back to your dashboard in Dashibase. While viewing any of the items on a table, add a Plugin block by typing '/plugin'. Then, add the URL of your deployed plugin and click "Set up".
+
+You should see the Hello World app, which tells you the setup data that Dashibase sent to the plugin. 
+
+When you are developing your plugin, you could use the setup data to select which data you want to use in your plugin. Let's say you have a table of customers, you could pull the email field of each customer via the `email` column and use it in your plugin. See [our Stripe plugin](https://github.com/Dashibase/dashibase-stripe-customer-plugin) for a concrete example.
+
+If you have any questions, feel free to reach us via Twitter ([@dashibase](https://twitter.com/dashibase)) or sk@dashibase.com.
+
+## Learn More
+
+You might find the following resources helpful:
+
+- [Hello World Nuxt.js plugin tutorial](https://dashibase.com/docs/hello-world-nuxtjs-plugin/)
+- [Plugin API reference](https://dashibase.com/docs/plugin-api-reference)
 
