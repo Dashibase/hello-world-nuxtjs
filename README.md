@@ -41,6 +41,6 @@ If you have any questions, feel free to reach us via Twitter ([@dashibase](https
 
 You might find the following resources helpful:
 
-- [Hello World Nuxt.js plugin tutorial](https://dashibase.com/docs/hello-world-nuxtjs-plugin/)
-- [Plugin API reference](https://dashibase.com/docs/plugin-api-reference)
+- [Hello World NuxtJS plugin tutorial](https://dashibase.com/docs/hello-world-nuxtjs-plugin/)
+- [Plugin API reference](https://dashibase.com/docs/plugin-api/)
 
